@@ -1,0 +1,19 @@
+body{
+display: flex;
+flex-direction: row;
+}
+
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    background-color: teal;
+    height: 100vh;
+    width: 20%;
+    gap: 10px;
+}
+
+.page{
+   display: flex;
+   background-color: #023d54;
+   width: 80%;
+}
