@@ -1,19 +1,127 @@
 body{
 display: flex;
 flex-direction: row;
+margin: 0;
 }
 
 .sidebar{
     display: flex;
     flex-direction: column;
-    background-color: teal;
+    align-items: center;
+    background-color: rgb(2, 110, 120);
     height: 100vh;
     width: 20%;
     gap: 10px;
+    
+}
+
+#search{
+    display: flex;
+    margin-top: 10px;
+    height: 3em;
+    width: 80%;
+    font-size: 1rem;
+    background-color: rgb(2, 61, 84);
+    border:none;
+    border-radius: 8px;
+    color: white;
 }
 
 .page{
    display: flex;
-   background-color: #023d54;
-   width: 80%;
+   justify-content: center;
+   align-items: center;
+   background-color: rgb(2, 61, 84);
+   width: 80%;   
+   
 }
+
+.tempDisplay{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    gap: 3em;
+}
+
+#location{
+    color: white;
+}
+
+.currentTempBox{
+    background-color: rgb(2, 81, 104);
+    height: 20em;
+    width: 40em;
+    border-radius: 20px;
+    color: white;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 0.5fr 1.5fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "item1 item2" 
+    "item3 item4"
+    ;
+}
+
+#temperature{
+    grid-area: item1;
+    display: flex;
+    border: 1px solid rgb(2, 61, 84);
+    border-radius: 8px;
+    font-size: 3rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+#high-low{  
+    grid-area: item3;
+    display: flex;
+    border: 1px solid rgb(2, 61, 84);
+    border-radius: 8px;
+    font-size: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#desc{
+    grid-area: item2;
+    display: flex;
+    border: 1px solid rgb(2, 61, 84);
+    border-radius: 8px;
+    font-size: 1rem;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#otherinfo{
+   grid-area: item4;
+   display: flex;
+}
+
+
+
+.islands{
+    height: 20em;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.island{
+    background-color: rgb(2, 81, 104);
+    height: 20em;
+    width: 15em;
+    border-radius: 20px;
+    color: white;
+}
+

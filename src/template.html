@@ -4,27 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather</title>
+    <script src="https://kit.fontawesome.com/1ec3559afd.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
+    
 <sidebar class="sidebar">
     <input type="text" id="search" placeholder="Search for your city">
     <button id="searchBtn">Search</button>
      <p id="status"></p>
 </sidebar>
     
-<div class="page">
-    <div class="islands">
-        <div id="island1">
-            <div id="currentTemp"></div>
+<section class="page">
+
+    <div class="tempDisplay">
+        <h1 id="location"></h1>
+
+        <div class="currentTempBox">
+            <div id="temperature">
+                <div id="currentTempIcon"></div>
+                <div id="currentTemp"></div>
+
+            </div>
+            
+            <div id="high-low">
+                <p id="tempHigh"></p>
+                <p id="tempLow"></p>
+            </div>
+
+            <div id="desc">
+                <div id="tempDescription"></div>
+            </div>
+
+            <div id="otherinfo">
+                <div id="feelslike"></div>
+            </div>
+        </div>
+        
+
+        <div class="islands">
+            <div class ="island">
+                <p id="tomorrowTemp"></p>
+            </div>
+
+            <div class="island"></div>
+
+            <div class="island"></div>
+            <div class="island"></div>
         </div>
 
-        <div id="island 2">
-            <div id="tomorrowTemp"></div>
-        </div>
 
     </div>
 
-</div>   
+    
+</section>   
 
     
     
