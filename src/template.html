@@ -8,19 +8,21 @@
 
 </head>
 <body>
-    
-<sidebar class="sidebar">
-    <input type="text" id="search" placeholder="Search for your city">
-    <button id="searchBtn">Search</button>
-     <p id="status"></p>
-</sidebar>
-    
+
 <section class="page">
 
-    <div class="tempDisplay">
-        <h1 id="location"></h1>
+    <div class="top">
+            <input type="text" id="search" placeholder="Search for your city">
+            <button id="searchBtn">Search</button>
+            <div id="status"></div>
+    </div>
+        <div id="location"></div>
 
+
+        <div class="tempDisplay">
+            
         <div class="currentTempBox">
+
             <div id="temperature">
                 <div id="currentTempIcon"></div>
                 <div id="currentTemp"></div>
@@ -39,17 +41,35 @@
             <div id="otherinfo">
                 <div id="feelslike"></div>
             </div>
+
+           
         </div>
-        
+
+         <div id="forecast12">
+            
+         </div>
 
         <div class="islands">
             <div class ="island">
-                <p id="tomorrowTemp"></p>
+                <div id="tomorrowDate"></div>
+                <i id="tomorrowIcon"></i>
+                <div id="tomorrowDesc"></div>
+                <div id="tomorrowTemp"></div>
             </div>
 
-            <div class="island"></div>
+            <div class="island">
+                <div id="DATdate"></div>
+                <i id="DATicon"></i>
+                <div id="DATtemp"></div>
+            </div>
+            
 
-            <div class="island"></div>
+            <div class="island">
+                <div id="overmorrowDate"></div>
+                <i id="overmorrowIcon"></i>
+                <div id="overmorrowTemp"></div>
+            </div>
+
             <div class="island"></div>
         </div>
 

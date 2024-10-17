@@ -1,4 +1,5 @@
 import checkIcon from "./fetchIcon";
+import fetchOtherTemp from "./fetchRest";
 const searchInput = document.querySelector('#search');
 const searchBtn = document.querySelector('#searchBtn');
 const status = document.querySelector("#status");
@@ -11,7 +12,13 @@ const tempLow = document.querySelector("#tempLow");
 const tempDescription = document.querySelector("#tempDescription");
 const tempFeelsLike = document.querySelector("#feelslike");
 
-const tomorrowTemp = document.querySelector("#tomorrowTemp");
+/*const tomorrowTemp = document.querySelector("#tomorrowTemp");
+const tomorrowDate = document.querySelector("#tomorrowDate");
+const tomorrowIcon = document.querySelector("#tomorrowIcon");*/
+
+/*const DATtemp = document.querySelector("#DATtemp");
+const DATdate = document.querySelector("#DATdate");
+const DATicon = document.querySelector("#DATicon");*/
 
 
 async function fetchLocation(searchCity){
@@ -40,7 +47,7 @@ function fetchTemp(searchCity) {
 
     const icon = data.days[0].icon;
     currentTempIcon.innerHTML = icon;
-    checkIcon(icon);
+    checkIcon(icon, currentTempIcon);
 
     const tempmax = data.days[0].tempmax;
     tempHigh.innerHTML = `Highs: ${tempmax}`;
@@ -54,8 +61,8 @@ function fetchTemp(searchCity) {
     const feelslike = data.currentConditions.feelslike;
     tempFeelsLike.innerHTML = `Feels like: ${feelslike}`;
     
-    const temp2 = data.days[1].temp;
-    tomorrowTemp.innerHTML = temp2;
+
+    fetchOtherTemp(data, getFormattedDate, checkIcon);
 
     }
 })
@@ -66,6 +73,19 @@ function fetchTemp(searchCity) {
     })
 }
 
+function getFormattedDate(dateString) {
+    const dateTom = new Date(dateString); 
+    const today = new Date(); 
+    
+    const isTomorrow = (dateTom.getDate() === today.getDate() + 1) && (dateTom.getMonth() === today.getMonth());
+    
+    if (isTomorrow) {
+        return "Tomorrow";
+    } else {
+        const options = { weekday: 'short' };
+        return dateTom.toLocaleDateString('en-US', options);
+    }
+}
 
 
 
