@@ -1,5 +1,7 @@
 import checkIcon from "./fetchIcon";
 import fetchOtherTemp from "./fetchRest";
+import backgroundTheme from "./backgrounds";
+
 const searchInput = document.querySelector('#search');
 const searchBtn = document.querySelector('#searchBtn');
 const status = document.querySelector("#status");
@@ -45,9 +47,11 @@ function fetchTemp(searchCity) {
     const temp = data.currentConditions.temp;
     currentTemp.innerHTML = temp;
 
-    const icon = data.days[0].icon;
+    const icon = data.currentConditions.icon
     currentTempIcon.innerHTML = icon;
     checkIcon(icon, currentTempIcon);
+    
+    backgroundTheme(icon);
 
     const tempmax = data.days[0].tempmax;
     tempHigh.innerHTML = `Highs: ${tempmax}`;
@@ -64,6 +68,8 @@ function fetchTemp(searchCity) {
 
     fetchOtherTemp(data, getFormattedDate, checkIcon);
 
+    
+
     }
 })
     .catch(function(error){
@@ -71,6 +77,7 @@ function fetchTemp(searchCity) {
         status.innerHTML = "Couldn't fetch temperature, please check spelling.";
         
     })
+    
 }
 
 function getFormattedDate(dateString) {
@@ -97,12 +104,6 @@ searchBtn.addEventListener('click', function() {
       alert('Please enter another city');
     }
   });
-
-
-  
-
-
-
 
 export default fetch;
    

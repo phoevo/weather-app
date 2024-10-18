@@ -2,6 +2,23 @@ body{
 display: flex;
 flex-direction: row;
 margin: 0;
+background: linear-gradient(to bottom, #87CEEB 0%, #87CEEB 100%),
+linear-gradient(205deg, rgba(255, 255, 255, 0.6) 40%, transparent 11%),
+linear-gradient(35deg, rgba(255, 255, 255, 0.6) 40%, transparent 11%);
+/* Blue sky background */
+    position: relative;
+    overflow: hidden;
+}
+
+.rays {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+        
+    background-size: 100% 100%;
+    pointer-events: none; /* Non-interactive layer */
 }
 
 .page{
@@ -9,13 +26,12 @@ margin: 0;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: rgb(2, 61, 84);
     width: 100vw;   
-    height: 100vh;  
- }
+    height: 100vh
+    
+}
 
 .top{
-    border: 2px solid red;
     display: flex;
     width: 50%;
     height: 3em;
@@ -28,7 +44,8 @@ margin: 0;
     justify-content: center;
     align-items: center;
     font-size: 1rem;
-    background-color: whitesmoke;
+    background-color: rgb(255, 255, 255, 0.3);
+    border: 3px solid rgb(255, 255, 255, 0.3);
     border-radius: 8px;
     color: black;
     
@@ -36,7 +53,8 @@ margin: 0;
 
 #searchBtn{
     border-radius: 8px;
-    background-color: whitesmoke;
+    background-color: rgb(255, 255, 255, 0.3);
+
     
 }
 
@@ -66,13 +84,15 @@ margin: 0;
 
 
 .currentTempBox{
-    background-color: rgb(2, 81, 104);
+    background-color: rgb(255, 255, 255, 0.3);
     height: 20em;
     width: 40em;
     border-radius: 20px;
-    color: white;
+    border: 3px solid rgb(255, 255, 255, 0.3);
+    color: rgb(0, 0, 0, 0.7);
     display: grid;
     gap: 10px;
+    mix-blend-mode:hard-light;
     grid-template-columns: 0.5fr 1.5fr;
     grid-template-rows: 1fr 1fr;
     grid-template-areas: 
@@ -84,7 +104,6 @@ margin: 0;
 #temperature{
     grid-area: item1;
     display: flex;
-    border: 1px solid rgb(2, 61, 84);
     border-radius: 8px;
     font-size: 3rem;
     flex-direction: column;
@@ -97,7 +116,6 @@ margin: 0;
 #high-low{  
     grid-area: item3;
     display: flex;
-    border: 1px solid rgb(2, 61, 84);
     border-radius: 8px;
     font-size: 1rem;
     flex-direction: column;
@@ -109,7 +127,6 @@ margin: 0;
 #desc{
     grid-area: item2;
     display: flex;
-    border: 1px solid rgb(2, 61, 84);
     border-radius: 8px;
     font-size: 1rem;
     flex-direction: column;
@@ -126,7 +143,9 @@ margin: 0;
     border-radius: 20px;
     width: 70%;
     height: 3em;
-    background-color: rgb(2, 81, 104);
+    background-color: rgb(255, 255, 255, 0.3);
+    border: 3px solid rgb(255, 255, 255, 0.3);
+
 }
 
 
@@ -147,7 +166,8 @@ margin: 0;
     align-items: center;
     font-size: 1.3em;
     gap: 20px;
-    background-color: rgb(2, 81, 104);
+    background-color: rgb(255, 255, 255, 0.3);
+    border: 3px solid rgb(255, 255, 255, 0.3);
     height: 15rem;
     width: 10rem;
     border-radius: 20px;
