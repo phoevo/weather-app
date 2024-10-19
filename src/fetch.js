@@ -13,6 +13,7 @@ const tempHigh = document.querySelector("#tempHigh");
 const tempLow = document.querySelector("#tempLow");
 const tempDescription = document.querySelector("#tempDescription");
 const tempFeelsLike = document.querySelector("#feelslike");
+const tempHumidity = document.querySelector("#tempHumidity");
 
 /*const tomorrowTemp = document.querySelector("#tomorrowTemp");
 const tomorrowDate = document.querySelector("#tomorrowDate");
@@ -54,19 +55,24 @@ function fetchTemp(searchCity) {
     backgroundTheme(icon);
 
     const tempmax = data.days[0].tempmax;
-    tempHigh.innerHTML = `Highs: ${tempmax}`;
+    tempHigh.innerHTML = `H: ${tempmax}`;
 
     const tempmin = data.days[0].tempmin;
-    tempLow.innerHTML = `Lows: ${tempmin}`;
+    tempLow.innerHTML = `L: ${tempmin}`;
 
     const description = data.description;
     tempDescription.innerHTML = description;
 
     const feelslike = data.currentConditions.feelslike;
-    tempFeelsLike.innerHTML = `Feels like: ${feelslike}`;
+    tempFeelsLike.innerHTML = `Feels like:<br> ${feelslike}`;
+
+    tempHumidity.innerHTML = `Humidity: <br> ${data.currentConditions.humidity}`;
+
+
     
 
     fetchOtherTemp(data, getFormattedDate, checkIcon);
+    
 
     
 
