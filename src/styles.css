@@ -1,22 +1,94 @@
-body{
-display: flex;
-flex-direction: row;
-font-family:'Helvetica';
-margin: 0;
-height: 100vh;
-background-color: rgb(10, 10, 30); /* Dark background for night sky */
-background-image: radial-gradient(2px 2px at 20% 30%, #fff, rgba(155, 155, 155, 0)), /* small stars */
-                    radial-gradient(10px 10px at 60% 50%, #fff, rgba(155, 155, 155, 0)),
-                    radial-gradient(2px 2px at 80% 80%, #fff, rgba(255, 255, 255, 0)),
-                    radial-gradient(1px 1px at 40% 90%, #fff, rgba(255, 255, 255, 0)),
-                    radial-gradient(1px 1px at 70% 20%, #fff, rgba(255, 255, 255, 0)),
-                    radial-gradient(2px 2px at 10% 60%, #fff, rgba(255, 255, 255, 0)),
-                    radial-gradient(2px 2px at 90% 10%, #fff, rgba(255, 255, 255, 0)),
-                    radial-gradient(1px 1px at 30% 75%, #fff, rgba(255, 255, 255, 0)),
-                    radial-gradient(2px 2px at 50% 10%, #fff, rgba(255, 255, 255, 0)),
-                    radial-gradient(1px 1px at 85% 40%, #fff, rgba(255, 255, 255, 0));
-  background-size: 100% 100%;
+body {
+    display: flex;
+    flex-direction: row;
+    font-family: 'Helvetica';
+    margin: 0;
+    height: 100vh;
+    background-color: rgb(80, 10, 20);
+    background-image: radial-gradient(2px 2px at 20% 30%, #fff, rgba(155, 155, 155, 0)), radial-gradient(2px 2px at 25% 35%, #fff, rgba(155, 155, 155, 0)),
+    radial-gradient(1px 1px at 60% 50%, #fff, rgba(155, 155, 155, 0)), radial-gradient(1px 1px at 15% 15%, #fff, rgba(155, 155, 155, 0)),
+    radial-gradient(2px 2px at 80% 80%, #fff, rgba(255, 255, 255, 0)),
+    radial-gradient(1px 1px at 40% 90%, #fff, rgba(255, 255, 255, 0)),
+    radial-gradient(1px 1px at 70% 20%, #fff, rgba(255, 255, 255, 0)),
+    radial-gradient(2px 2px at 10% 60%, #fff, rgba(255, 255, 255, 0)),
+    radial-gradient(2px 2px at 90% 10%, #fff, rgba(255, 255, 255, 0)),
+    radial-gradient(1px 1px at 30% 75%, #fff, rgba(255, 255, 255, 0)),
+    radial-gradient(2px 2px at 50% 10%, #fff, rgba(255, 255, 255, 0)),
+    radial-gradient(1px 1px at 85% 40%, #fff, rgba(255, 255, 255, 0));
+    background-size: 100% 100%;
+    overflow: hidden; 
+    position: relative; 
 }
+
+
+
+.rainAll{
+    visibility: hidden;
+}
+
+.rain {
+    position: absolute;
+    width: 2px;  
+    height: 80px; 
+    background-color: white; 
+    top: -80px;  
+    border-radius: 50%;  
+    z-index: 10; 
+    animation: fall linear infinite; 
+    opacity: 0.4;
+    
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0); /* Starting point (above viewport) */
+    }
+    100% {
+        transform: translateY(100vh); /* Move down the full height of the viewport */
+    }
+}
+
+.rain1 {
+    left: 5%;
+    animation-duration: 500ms;
+}
+
+.rain2 {
+    left: 15%;
+    animation-duration: 500ms;
+    animation-delay: 200ms;
+}
+
+.rain3 {
+    left: 30%;
+    animation-duration: 500ms;
+    animation-delay: 600ms;
+}
+
+.rain4 {
+    left: 42%;
+    animation-duration: 500ms;
+    animation-delay: 800ms;
+}
+
+.rain5 {
+    left: 57%;
+    animation-duration: 500ms;
+    animation-delay: 1s;
+}
+
+.rain6 {
+    left: 70%;
+    animation-duration: 500ms;
+    animation-delay: 1.2s;
+}
+
+.rain7 {
+    left: 95%;
+    animation-duration: 500ms;
+    animation-delay: 1.3s;
+}
+
 
 
 
@@ -24,7 +96,7 @@ background-image: radial-gradient(2px 2px at 20% 30%, #fff, rgba(155, 155, 155, 
     position: absolute;
     visibility: hidden;
     top: -10; 
-    left: 0; 
+    left: 0%; 
     width: 80px; 
     height: 1000px; 
     transform-origin: top ;
@@ -52,6 +124,15 @@ background-image: radial-gradient(2px 2px at 20% 30%, #fff, rgba(155, 155, 155, 
     animation-delay: 1.5s; /* Delay the second ray's animation */
 }
 
+.god-ray.fourth{
+    z-index: 0;
+    width: 10px;
+    left: 68%;
+
+    transform: rotate(-40eg); /* Slightly different angle for variation */
+    animation-delay: 1.5s;
+}
+
 @keyframes ray-animate {
     0%, 100% {
         opacity: 0.6; /* Full opacity at start and end */
@@ -69,7 +150,11 @@ background-image: radial-gradient(2px 2px at 20% 30%, #fff, rgba(155, 155, 155, 
     align-items: center;
     flex-direction: column;
     width: 100vw;   
-    height: 100vh
+    height: 100vh;
+    color: white;
+    
+    
+
     
 }
 
@@ -78,6 +163,7 @@ background-image: radial-gradient(2px 2px at 20% 30%, #fff, rgba(155, 155, 155, 
     width: 50%;
     height: 3em;
     margin-top: 10px;
+    
     
 }
 
@@ -105,7 +191,6 @@ background-image: radial-gradient(2px 2px at 20% 30%, #fff, rgba(155, 155, 155, 
 }
 
 #location{
-    color: white;
     display: flex;
     flex-grow: 1;
     justify-content: center;
@@ -130,10 +215,11 @@ background-image: radial-gradient(2px 2px at 20% 30%, #fff, rgba(155, 155, 155, 
     height: 20em;
     width: 40em;
     border-radius: 20px;
-    border: 3px solid rgb(255, 255, 255, 0.3);
-    color: rgb(0, 0, 0, 0.7);
+    border: 1.5px solid rgb(255, 255, 255, 0.3);
     display: grid;
     gap: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5), 
+                0px 5px 5px rgba(0, 0, 0, 0.3); 
     mix-blend-mode:hard-light;
     grid-template-columns: 0.5fr 1.5fr;
     grid-template-rows: 1fr 1fr;
@@ -192,9 +278,11 @@ background-image: radial-gradient(2px 2px at 20% 30%, #fff, rgba(155, 155, 155, 
     flex-direction: row;
     border-radius: 20px;
     width: 70%;
-    height: 3em;
+    height: 3.5em;
     background-color: rgb(255, 255, 255, 0.3);
     border: 3px solid rgb(255, 255, 255, 0.3);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5), 
+    0px 5px 5px rgba(0, 0, 0, 0.3); 
 
 }
 
@@ -202,6 +290,8 @@ background-image: radial-gradient(2px 2px at 20% 30%, #fff, rgba(155, 155, 155, 
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 10px;
+    
    
 }
 
@@ -217,6 +307,7 @@ background-image: radial-gradient(2px 2px at 20% 30%, #fff, rgba(155, 155, 155, 
     display: flex;
     justify-content: space-around;
     align-items: center;
+
     
 }
 
@@ -233,6 +324,8 @@ background-image: radial-gradient(2px 2px at 20% 30%, #fff, rgba(155, 155, 155, 
     width: 10rem;
     border-radius: 20px;
     color: white;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5), 
+    0px 5px 5px rgba(0, 0, 0, 0.3); 
 }
 
 .island i{
