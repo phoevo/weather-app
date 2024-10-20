@@ -17,6 +17,8 @@ function backgroundTheme(i){
         godray.style.visibility = "hidden";
         godray2.style.visibility = "hidden";
         godray3.style.visibility = "hidden";
+        godray4.style.visibility = "hidden";
+
         page.style.opacity = "1";
         rain.style.visibility = "hidden";
         
@@ -149,7 +151,7 @@ radial-gradient(1px 1px at 85% 40%, #fff, rgba(255, 255, 255, 0))`;
         background.style.backgroundSize = "";
         background.style.backgroundAttachment = "";
         background.style.animation = "";
-        background.style.backgroundColor = "";
+        background.style.backgroundColor = "rgb(0, 0, 0, 0.7)";
 
 
         background.style.backgroundImage = "linear-gradient(0deg, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0.7) 100%)";
