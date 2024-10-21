@@ -9,20 +9,15 @@ const status = document.querySelector("#status");
 const location = document.querySelector("#location");
 const currentTemp = document.querySelector("#currentTemp");
 const currentTempIcon = document.querySelector("#currentTempIcon");
+const currentTempConditions = document.querySelector("#currentTempConditions");
 const tempHigh = document.querySelector("#tempHigh");
 const tempLow = document.querySelector("#tempLow");
 const tempDescription = document.querySelector("#tempDescription");
 const tempFeelsLike = document.querySelector("#feelslike");
 const tempHumidity = document.querySelector("#tempHumidity");
 
-/*const tomorrowTemp = document.querySelector("#tomorrowTemp");
-const tomorrowDate = document.querySelector("#tomorrowDate");
-const tomorrowIcon = document.querySelector("#tomorrowIcon");*/
-
-/*const DATtemp = document.querySelector("#DATtemp");
-const DATdate = document.querySelector("#DATdate");
-const DATicon = document.querySelector("#DATicon");*/
-
+const loadedCity = "New york City";
+fetchTemp(loadedCity);
 
 async function fetchLocation(searchCity){
     try {
@@ -47,6 +42,8 @@ function fetchTemp(searchCity) {
         
     const temp = data.currentConditions.temp;
     currentTemp.innerHTML = temp;
+
+    currentTempConditions.innerHTML = data.currentConditions.conditions;
 
     const icon = data.currentConditions.icon
     currentTempIcon.innerHTML = icon;
@@ -112,4 +109,5 @@ searchBtn.addEventListener('click', function() {
   });
 
 export default fetch;
+export {fetchTemp};
    

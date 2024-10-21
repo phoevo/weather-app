@@ -8,7 +8,12 @@ const godray3 = document.querySelector(".god-ray.third");
 const godray4 = document.querySelector(".god-ray.fourth");
 
 const page = document.querySelector(".page");
-const rain = document.querySelector(".rainAll");
+const rainAll = document.querySelector(".rainAll");
+const rain = document.querySelector(".rain");
+const snowAll = document.querySelector(".snowAll");
+const snow = document.querySelector(".snow");
+
+
 
 
 function backgroundTheme(i){
@@ -20,7 +25,10 @@ function backgroundTheme(i){
         godray4.style.visibility = "hidden";
 
         page.style.opacity = "1";
-        rain.style.visibility = "hidden";
+
+        rainAll.style.visibility = "hidden";
+        snowAll.style.visibility = "hidden";
+
         
 
 
@@ -44,7 +52,9 @@ function backgroundTheme(i){
         godray4.style.visibility = "visible";
 
         page.style.opacity = "1";
-        rain.style.visibility = "hidden";
+        rainAll.style.visibility = "hidden";
+        snowAll.style.visibility = "hidden";
+
 
 
 
@@ -75,15 +85,19 @@ function backgroundTheme(i){
         godray.style.visibility = "hidden";
         godray2.style.visibility = "hidden";
         godray3.style.visibility = "hidden";
-        godray3.style.visibility = "hidden";
+        godray4.style.visibility = "hidden";
 
-        rain.style.visibility = "hidden";
+        rainAll.style.visibility = "hidden";
+        snowAll.style.visibility = "hidden";
+
 
 
         background.style.background = "";
         background.style.backgroundSize = "";
         background.style.backgroundAttachment = "";
         background.style.animation = "";
+        
+
 
 
         background.style.backgroundColor = "rgb(10, 10, 30)";
@@ -109,13 +123,16 @@ radial-gradient(1px 1px at 85% 40%, #fff, rgba(255, 255, 255, 0))`;
         godray3.style.visibility = "hidden";
         godray3.style.visibility = "hidden";
 
-        rain.style.visibility = "hidden";
+        rainAll.style.visibility = "hidden";
+        snowAll.style.visibility = "hidden";
+
 
 
         background.style.background = "";
         background.style.backgroundSize = "";
         background.style.backgroundAttachment = "";
         background.style.animation = "";
+
 
 
         background.style.backgroundColor = "rgb(10, 10, 20)";
@@ -137,14 +154,39 @@ radial-gradient(1px 1px at 85% 40%, #fff, rgba(255, 255, 255, 0))`;
 
     }
 
+    else if (i === "cloudy"){
+        godray.style.visibility = "hidden";
+        godray2.style.visibility = "hidden";
+        godray3.style.visibility = "hidden";
+        godray4.style.visibility = "hidden";
+
+        rainAll.style.visibility = "hidden";
+        snowAll.style.visibility = "hidden";
+
+
+
+        background.style.background = "";
+        background.style.backgroundSize = "";
+        background.style.backgroundAttachment = "";
+        background.style.animation = "";
+
+
+        background.style.backgroundColor = "rgb(10, 10, 30)";
+         background.style.background = 
+        `linear-gradient(0deg, rgba(0, 0, 0, 0.5) 70%, rgba(0, 0, 0, 0.7) 100%)`
+        ;
+
+    }
+
     else if(i === "rain"){
 
         godray.style.visibility = "hidden";
         godray2.style.visibility = "hidden";
         godray3.style.visibility = "hidden";
-        godray3.style.visibility = "hidden";
+        godray4.style.visibility = "hidden";
 
-        rain.style.visibility = "visible";
+        rainAll.style.visibility = "visible";
+        snowAll.style.visibility = "hidden";
 
 
         background.style.background = "";
@@ -152,9 +194,36 @@ radial-gradient(1px 1px at 85% 40%, #fff, rgba(255, 255, 255, 0))`;
         background.style.backgroundAttachment = "";
         background.style.animation = "";
         background.style.backgroundColor = "rgb(0, 0, 0, 0.7)";
+        background.style.backgroundSize = "100% 100%";
+
 
 
         background.style.backgroundImage = "linear-gradient(0deg, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0.7) 100%)";
+
+
+    }
+
+
+    else if(i === "snow"){
+
+        godray.style.visibility = "hidden";
+        godray2.style.visibility = "hidden";
+        godray3.style.visibility = "hidden";
+        godray4.style.visibility = "hidden";
+
+        rainAll.style.visibility = "hidden";
+        snowAll.style.visibility = "visible"
+
+        background.style.background = "";
+        background.style.backgroundSize = "";
+        background.style.backgroundAttachment = "";
+        background.style.animation = "";
+        background.style.backgroundColor = "rgb(0, 0, 0, 0.7)";
+        background.style.backgroundSize = "100% 100%";
+
+
+
+        background.style.backgroundImage = "linear-gradient(0deg, rgba(255,255,255,0.7) 20%, rgba(0,0,0,0.2) 100%)";
 
 
     }

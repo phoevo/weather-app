@@ -5,87 +5,147 @@ body {
     margin: 0;
     height: 100vh;
     background-color: rgb(0, 0, 0, 0.7);
-    background-image: radial-gradient(2px 2px at 20% 30%, #fff, rgba(155, 155, 155, 0)), radial-gradient(2px 2px at 25% 35%, #fff, rgba(155, 155, 155, 0)),
-    radial-gradient(1px 1px at 60% 50%, #fff, rgba(155, 155, 155, 0)), radial-gradient(1px 1px at 15% 15%, #fff, rgba(155, 155, 155, 0)),
-    radial-gradient(2px 2px at 80% 80%, #fff, rgba(255, 255, 255, 0)),
-    radial-gradient(1px 1px at 40% 90%, #fff, rgba(255, 255, 255, 0)),
-    radial-gradient(1px 1px at 70% 20%, #fff, rgba(255, 255, 255, 0)),
-    radial-gradient(2px 2px at 10% 60%, #fff, rgba(255, 255, 255, 0)),
-    radial-gradient(2px 2px at 90% 10%, #fff, rgba(255, 255, 255, 0)),
-    radial-gradient(1px 1px at 30% 75%, #fff, rgba(255, 255, 255, 0)),
-    radial-gradient(2px 2px at 50% 10%, #fff, rgba(255, 255, 255, 0)),
-    radial-gradient(1px 1px at 85% 40%, #fff, rgba(255, 255, 255, 0));
+    background-image: linear-gradient(0deg, rgba(0,120,255,0.9) 70%, rgba(255,255,255,0.8) 100%);
     background-size: 100% 100%;
     overflow: hidden; 
-    position: relative; 
+}
+
+.snowAll{
+    visibility: hidden;
+   
+}
+
+.snow {
+    position: absolute;
+    width: 8px;  
+    height: 8px; 
+    background-color: white; 
+    top: -80px;  
+    border-radius: 50%;  
+    z-index: 10; 
+    animation: snowfall linear infinite; 
+    opacity: 0.8;
+    animation-duration: 2s;
+    
+}
+
+@keyframes snowfall {
+    0% {
+        transform: translateY(0); 
+    }
+    100% {
+        transform: translateY(100vh); 
+    }
+}
+
+.snow.snow1 {
+    left: 5%;
+    animation-delay: 1.3s;
+}
+
+.snow.snow2 {
+    left: 15%;
+    animation-delay: 500ms;
+}
+
+.snow.snow3 {
+    left: 27%;
+    animation-delay: 900ms;
+}
+
+.snow.snow4 {
+    left: 35%;
+    animation-delay: 200ms;
+}
+
+.snow.snow5 {
+    left: 49%;
+    animation-delay: 1.5s;
+}
+
+.snow.snow6 {
+    left: 62%;
+    animation-delay: 2s;
+}
+
+.snow.snow7 {
+    left: 78%;
+    animation-delay: 1s;
+}
+.snow.snow8 {
+    left: 85%;
+    animation-delay: 1.9s;
+}
+.snow.snow9 {
+    left: 95%;
+    animation-delay: 600ms;
+}
+.snow.snow10 {
+    left: 98%;
+    animation-delay: 1s;
 }
 
 
 
 .rainAll{
     visibility: hidden;
+   
 }
 
 .rain {
     position: absolute;
     width: 2px;  
-    height: 80px; 
+    height: 60px; 
     background-color: white; 
     top: -80px;  
     border-radius: 50%;  
     z-index: 10; 
     animation: fall linear infinite; 
     opacity: 0.4;
+    animation-duration: 700ms;
     
 }
 
 @keyframes fall {
     0% {
-        transform: translateY(0); /* Starting point (above viewport) */
+        transform: translateY(0); 
     }
     100% {
-        transform: translateY(100vh); /* Move down the full height of the viewport */
+        transform: translateY(100vh); 
     }
 }
 
-.rain1 {
+.rain.rain1 {
     left: 5%;
-    animation-duration: 500ms;
 }
 
-.rain2 {
+.rain.rain2 {
     left: 15%;
-    animation-duration: 500ms;
     animation-delay: 200ms;
 }
 
-.rain3 {
+.rain.rain3 {
     left: 30%;
-    animation-duration: 500ms;
     animation-delay: 600ms;
 }
 
-.rain4 {
+.rain.rain4 {
     left: 42%;
-    animation-duration: 500ms;
     animation-delay: 800ms;
 }
 
-.rain5 {
+.rain.rain5 {
     left: 57%;
-    animation-duration: 500ms;
     animation-delay: 1s;
 }
 
-.rain6 {
+.rain.rain6 {
     left: 70%;
-    animation-duration: 500ms;
     animation-delay: 1.2s;
 }
 
-.rain7 {
+.rain.rain7 {
     left: 95%;
-    animation-duration: 500ms;
     animation-delay: 1.3s;
 }
 
@@ -120,8 +180,8 @@ body {
     width: 30px;
     left: 48%;
 
-    transform: rotate(-40eg); /* Slightly different angle for variation */
-    animation-delay: 1.5s; /* Delay the second ray's animation */
+    transform: rotate(-40eg); 
+    animation-delay: 1.5s; 
 }
 
 .god-ray.fourth{
@@ -129,16 +189,16 @@ body {
     width: 10px;
     left: 68%;
 
-    transform: rotate(-40eg); /* Slightly different angle for variation */
+    transform: rotate(-40eg); 
     animation-delay: 1.5s;
 }
 
 @keyframes ray-animate {
     0%, 100% {
-        opacity: 0.6; /* Full opacity at start and end */
+        opacity: 0.6; 
     }
     50% {
-        opacity: 0.2; /* Half opacity at the midpoint of animation */
+        opacity: 0.2; 
     }
 }
 
@@ -163,6 +223,7 @@ body {
     width: 50%;
     height: 3em;
     margin-top: 10px;
+    gap: 10px;
     
     
 }
@@ -182,6 +243,8 @@ body {
 #searchBtn{
     border-radius: 8px;
     background-color: rgb(255, 255, 255, 0.3);
+    border: 3px solid rgb(255, 255, 255, 0.3);
+
 
     
 }
@@ -211,7 +274,7 @@ body {
 
 
 .currentTempBox{
-    background-color: rgb(255, 255, 255, 0.3);
+    background-color: rgb(255, 255, 255, 0.2);
     height: 20em;
     width: 40em;
     border-radius: 20px;
@@ -238,8 +301,10 @@ body {
     justify-content: center;
     align-items: center;
     
-    
-    
+}
+
+#currentTempConditions{
+    font-size: 0.3em;
 }
 
 #high-low{  
@@ -279,7 +344,7 @@ body {
     border-radius: 20px;
     width: 70%;
     height: 3.5em;
-    background-color: rgb(255, 255, 255, 0.3);
+    background-color: rgb(255, 255, 255, 0.2);
     border: 3px solid rgb(255, 255, 255, 0.3);
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5), 
     0px 5px 5px rgba(0, 0, 0, 0.3); 
@@ -307,10 +372,14 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    
 
     
 }
 
+#tomorrowDesc{
+    font-size: 0.6em;
+}
 .island{
     display: flex;
     flex-direction: column;
@@ -318,7 +387,7 @@ body {
     align-items: center;
     font-size: 1.3em;
     gap: 20px;
-    background-color: rgb(255, 255, 255, 0.3);
+    background-color: rgb(255, 255, 255, 0.2);
     border: 3px solid rgb(255, 255, 255, 0.3);
     height: 15rem;
     width: 10rem;
