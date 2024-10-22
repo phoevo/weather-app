@@ -77,7 +77,11 @@ function fetchTemp(searchCity) {
 })
     .catch(function(error){
         console.log("Error fetching temperature:", error);
-        status.innerHTML = "Couldn't fetch temperature, please check spelling.";
+        status.innerHTML ="Couldn't fetch temperature, please check spelling.";
+
+        setTimeout(() => {
+            status.remove()
+        }, 3000);
         
     })
     
