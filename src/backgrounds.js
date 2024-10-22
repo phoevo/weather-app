@@ -121,7 +121,7 @@ radial-gradient(1px 1px at 85% 40%, #fff, rgba(255, 255, 255, 0))`;
         godray.style.visibility = "hidden";
         godray2.style.visibility = "hidden";
         godray3.style.visibility = "hidden";
-        godray3.style.visibility = "hidden";
+        godray4.style.visibility = "hidden";
 
         rainAll.style.visibility = "hidden";
         snowAll.style.visibility = "hidden";
